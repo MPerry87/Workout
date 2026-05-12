@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Settimanale V2</title>
+    <style>
+        :root {
+            --bg: #0f172a; --card: #1e293b; --accent: #10b981; --trx: #3b82f6; --gym: #f59e0b; --text: #f8fafc;
+        }
+        body { font-family: sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 15px; padding-bottom: 50px; }
+        .nav { display: flex; gap: 5px; margin-bottom: 15px; flex-wrap: wrap; }
+        .nav button { flex: 1; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; min-width: 100px; }
+        .btn-cali { background: var(--accent); } .btn-trx { background: var(--trx); } .btn-gym { background: var(--gym); }
+        
+        .time-nav { display: flex; background: #334155; border-radius: 25px; margin-bottom: 20px; }
+        .time-nav div { flex: 1; text-align: center; padding: 10px; cursor: pointer; border-radius: 25px; }
+        .t-active { background: white; color: black; font-weight: bold; }
+
+        .section { display: none; } .active { display: block; }
+        .card { background: var(--card); border-radius: 12px; padding: 15px; margin-bottom: 15px; border-top: 4px solid var(--accent); }
+        .exercise { border-bottom: 1px solid #334155; padding: 12px 0; }
+        .ex-header { display: flex; justify-content: space-between; align-items: center; }
+        .reps { color: var(--accent); font-weight: bold; }
+        .rest { font-size: 0.8rem; color: #fb7185; margin-top: 4px; display: block; }
+        .desc { font-size: 0.85rem; color: #94a3b8; font-style: italic; }
+        .extra { display: none; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; margin-top: 5px; }
+        .show-60 .extra { display: block; }
+    </style>
+</head>
+<body class="show-30">
+
+    <h1>🏋️ Workout Settimanale</h1>
+
+    <div class="nav">
+        <button class="btn-cali" onclick="show('cali')">CASA</button>
+        <button class="btn-trx" onclick="show('trx')">TRX</button>
+        <button class="btn-gym" onclick="show('gym')">PALESTRA</button>
+    </div>
+
+    <div class="time-nav">
+        <div id="m30" class="t-active" onclick="setTime(30)">30 MIN</div>
+        <div id="m60" onclick="setTime(60)">60 MIN</div>
+    </div>
+
+    <div id="cali" class="section active">
+        <div class="card">
+            <h2>Lunedì / Giovedì (Spinta e Tirata)</h2>
+            <div class="exercise">
+                <div class="ex-header"><span>1. Push-ups Classici</span> <span class="reps">4 x 12</span></div>
+                <span class="desc">Mani sul tappetino. Se difficile, poggia le ginocchia.</span>
+                <span class="rest">Recupero: 90 secondi</span>
+            </div>
+            <div class="exercise">
+                <div class="ex-header"><span>2. Floor Rows (Trazione a terra)</span> <span class="reps">4 x 15</span></div>
+                <span class="desc">Sdraiato pancia in giù, tira i gomiti indietro sollevando il petto dal tappetino (simula il rematore).</span>
+                <span class="rest">Recupero: 90 secondi</span>
+            </div>
+            <div class="extra">
+                <div class="exercise">
+                    <div class="ex-header"><span>3. Diamond Push-ups (Sost. Dips)</span> <span class="reps">3 x 10</span></div>
+                    <span class="desc">Mani unite a forma di diamante sotto il petto. Focus tricipiti.</span>
+                    <span class="rest">Recupero: 60 secondi</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="trx" class="section">
+        <div class="card" style="border-color: var(--trx)">
+            <h2>TRX Total Body</h2>
+            <div class="exercise">
+                <div class="ex-header"><span>1. TRX Row</span> <span class="reps">4 x 12</span></div>
+                <span class="rest">Recupero: 60 secondi</span>
+            </div>
+            <div class="exercise">
+                <div class="ex-header"><span>2. TRX Chest Press</span> <span class="reps">4 x 12</span></div>
+                <span class="rest">Recupero: 60 secondi</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="gym" class="section">
+        <div class="card" style="border-color: var(--gym)">
+            <h2>Esercizi con Attrezzatura</h2>
+            <div class="exercise">
+                <div class="ex-header"><span>1. Trazioni alla Sbarra</span> <span class="reps">4 x MAX</span></div>
+                <span class="desc">Usa la sbarra della palestra.</span>
+                <span class="rest">Recupero: 2 minuti</span>
+            </div>
+            <div class="exercise">
+                <div class="ex-header"><span>2. Dips alle Parallele</span> <span class="reps">4 x 8/10</span></div>
+                <span class="desc">Scendi controllato fino a 90 gradi.</span>
+                <span class="rest">Recupero: 2 minuti</span>
+            </div>
+            <div class="extra">
+                <div class="exercise">
+                    <div class="ex-header"><span>3. Lat Machine / Pulley</span> <span class="reps">3 x 12</span></div>
+                    <span class="rest">Recupero: 90 secondi</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function show(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+        function setTime(min) {
+            if(min == 60) {
+                document.body.classList.add('show-60');
+                document.getElementById('m60').classList.add('t-active');
+                document.getElementById('m30').classList.remove('t-active');
+            } else {
+                document.body.classList.remove('show-60');
+                document.getElementById('m30').classList.add('t-active');
+                document.getElementById('m60').classList.remove('t-active');
+            }
+        }
+    </script>
+</body>
+</html>
