@@ -11,30 +11,23 @@
         }
         body { font-family: sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 15px; padding-bottom: 50px; }
         h1 { text-align: center; font-size: 1.4rem; color: var(--accent); }
-        
         .nav { display: flex; gap: 5px; margin-bottom: 15px; }
         .nav button { flex: 1; padding: 12px; border: none; border-radius: 8px; font-weight: bold; color: white; cursor: pointer; }
         .btn-cali { background: var(--accent); } 
         .btn-trx { background: var(--trx); } 
         .btn-gym { background: var(--gym); }
-        
         .time-nav { display: flex; background: #334155; border-radius: 25px; margin-bottom: 20px; padding: 4px; }
         .time-nav div { flex: 1; text-align: center; padding: 10px; cursor: pointer; border-radius: 25px; transition: 0.3s; }
         .t-active { background: white; color: black; font-weight: bold; }
-
         .section { display: none; } 
         .active { display: block; }
-        
         .card { background: var(--card); border-radius: 12px; padding: 15px; margin-bottom: 20px; border-left: 5px solid var(--accent); }
         .day-title { margin: 0 0 10px 0; font-size: 1.1rem; color: #fff; text-transform: uppercase; }
-        
         .exercise { border-bottom: 1px solid #334155; padding: 12px 0; }
         .exercise:last-child { border: none; }
         .ex-header { display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
         .reps { color: var(--accent); }
         .rest { font-size: 0.8rem; color: #fb7185; margin-top: 4px; display: block; }
-        .desc { font-size: 0.85rem; color: #94a3b8; font-style: italic; display: block; margin-top: 4px; }
-        
         .extra { display: none; margin-top: 10px; border-top: 1px dashed #444; padding-top: 10px; }
         .show-60 .extra { display: block; }
         .extra-label { font-size: 0.7rem; background: #444; padding: 2px 5px; border-radius: 4px; margin-bottom: 5px; display: inline-block; }
@@ -55,101 +48,51 @@
         <div id="m60" onclick="setTime(60)">60 MINUTI</div>
     </div>
 
-    <!-- SEZIONE CASA (CALISTHENICS) -->
+    <!-- SEZIONE CASA -->
     <div id="cali" class="section active">
-        <!-- LUNEDI / GIOVEDI -->
         <div class="card">
             <h2 class="day-title">Lunedì / Giovedì (Spinta-Tirata)</h2>
-            <div class="exercise">
-                <div class="ex-header"><span>Push-ups Classici</span> <span class="reps">4 x 12</span></div>
-                <span class="desc">Mani larghezza spalle. Corpo dritto.</span>
-                <span class="rest">Recupero: 90 sec</span>
-            </div>
-            <div class="exercise">
-                <div class="ex-header"><span>Floor Rows (Rematore terra)</span> <span class="reps">4 x 15</span></div>
-                <span class="desc">Sdraiato pancia in giù, tira i gomiti indietro sollevando il petto.</span>
-                <span class="rest">Recupero: 90 sec</span>
-            </div>
-            <div class="extra">
-                <span class="extra-label">EXTRA 60 MIN</span>
-                <div class="exercise">
-                    <div class="ex-header"><span>Diamond Push-ups</span> <span class="reps">3 x 10</span></div>
-                    <span class="desc">Mani a diamante. Alternativa ai Dips.</span>
-                    <span class="rest">Recupero: 60 sec</span>
-                </div>
-            </div>
+            <div class="exercise"><div class="ex-header"><span>Push-ups</span> <span class="reps">4 x 12</span></div><span class="rest">90s rec</span></div>
+            <div class="exercise"><div class="ex-header"><span>Floor Rows</span> <span class="reps">4 x 15</span></div><span class="rest">90s rec</span></div>
+            <div class="extra"><span class="extra-label">EXTRA</span><div class="exercise"><span>Diamond Push-ups</span> <span class="reps">3 x 10</span></div></div>
         </div>
-
-        <!-- MARTEDI / VENERDI -->
         <div class="card">
             <h2 class="day-title">Martedì / Venerdì (Gambe-Core)</h2>
-            <div class="exercise">
-                <div class="ex-header"><span>Squat</span> <span class="reps">4 x 20</span></div>
-                <span class="desc">Schiena dritta, scendi bene col bacino.</span>
-                <span class="rest">Recupero: 90 sec</span>
-            </div>
-            <div class="exercise">
-                <div class="ex-header"><span>Affondi Alternati</span> <span class="reps">3 x 12 a gamba</span></div>
-                <span class="rest">Recupero: 90 sec</span>
-            </div>
-            <div class="extra">
-                <span class="extra-label">EXTRA 60 MIN</span>
-                <div class="exercise">
-                    <div class="ex-header"><span>Hollow Body Hold</span> <span class="reps">3 x 30 sec</span></div>
-                    <span class="desc">Addome contratto, schiena piatta a terra.</span>
-                    <span class="rest">Recupero: 60 sec</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- SABATO -->
-        <div class="card">
-            <h2 class="day-title">Sabato (Total Body)</h2>
-            <div class="exercise">
-                <div class="ex-header"><span>Burpees</span> <span class="reps">3 x 10</span></div>
-                <span class="rest">Recupero: 60 sec</span>
-            </div>
-            <div class="exercise">
-                <div class="ex-header"><span>Plank</span> <span class="reps">3 x 60 sec</span></div>
-                <span class="rest">Recupero: 45 sec</span>
-            </div>
+            <div class="exercise"><div class="ex-header"><span>Squat</span> <span class="reps">4 x 20</span></div><span class="rest">90s rec</span></div>
+            <div class="exercise"><div class="ex-header"><span>Affondi</span> <span class="reps">3 x 12</span></div><span class="rest">90s rec</span></div>
+            <div class="extra"><span class="extra-label">EXTRA</span><div class="exercise"><span>Hollow Body</span> <span class="reps">3x30s</span></div></div>
         </div>
     </div>
 
     <!-- SEZIONE TRX -->
     <div id="trx" class="section">
         <div class="card" style="border-left-color: var(--trx)">
-            <h2 class="day-title">Allenamento TRX</h2>
-            <div class="exercise">
-                <div class="ex-header"><span>TRX Row</span> <span class="reps">4 x 12</span></div>
-                <span class="rest">Recupero: 60 sec</span>
-            </div>
-            <div class="exercise">
-                <div class="ex-header"><span>TRX Chest Press</span> <span class="reps">4 x 12</span></div>
-                <span class="rest">Recupero: 60 sec</span>
-            </div>
-            <div class="extra">
-                <span class="extra-label">EXTRA 60 MIN</span>
-                <div class="exercise">
-                    <div class="ex-header"><span>TRX Pistol Squat</span> <span class="reps">3 x 8 a gamba</span></div>
-                    <span class="rest">Recupero: 60 sec</span>
-                </div>
-            </div>
+            <h2 class="day-title">Lunedì / Giovedì (TRX Upper)</h2>
+            <div class="exercise"><div class="ex-header"><span>TRX Row</span> <span class="reps">4 x 12</span></div><span class="rest">60s rec</span></div>
+            <div class="exercise"><div class="ex-header"><span>TRX Chest Press</span> <span class="reps">4 x 12</span></div><span class="rest">60s rec</span></div>
+            <div class="extra"><span class="extra-label">EXTRA</span><div class="exercise"><span>TRX Bicipiti</span> <span class="reps">3 x 10</span></div></div>
+        </div>
+        <div class="card" style="border-left-color: var(--trx)">
+            <h2 class="day-title">Martedì / Venerdì (TRX Lower)</h2>
+            <div class="exercise"><div class="ex-header"><span>TRX Squat</span> <span class="reps">4 x 15</span></div><span class="rest">60s rec</span></div>
+            <div class="exercise"><div class="ex-header"><span>TRX Hamstring Curl</span> <span class="reps">3 x 12</span></div><span class="rest">60s rec</span></div>
+            <div class="extra"><span class="extra-label">EXTRA</span><div class="exercise"><span>TRX Pistol Squat</span> <span class="reps">3 x 8</span></div></div>
         </div>
     </div>
 
     <!-- SEZIONE PALESTRA -->
     <div id="gym" class="section">
         <div class="card" style="border-left-color: var(--gym)">
-            <h2 class="day-title">Esercizi Palestra</h2>
-            <div class="exercise">
-                <div class="ex-header"><span>Trazioni alla sbarra</span> <span class="reps">4 x MAX</span></div>
-                <span class="rest">Recupero: 120 sec</span>
-            </div>
-            <div class="exercise">
-                <div class="ex-header"><span>Dips alle parallele</span> <span class="reps">4 x 10</span></div>
-                <span class="rest">Recupero: 120 sec</span>
-            </div>
+            <h2 class="day-title">Lunedì / Giovedì (Gym Power)</h2>
+            <div class="exercise"><div class="ex-header"><span>Trazioni</span> <span class="reps">4 x MAX</span></div><span class="rest">120s rec</span></div>
+            <div class="exercise"><div class="ex-header"><span>Dips Parallele</span> <span class="reps">4 x 10</span></div><span class="rest">120s rec</span></div>
+            <div class="extra"><span class="extra-label">EXTRA</span><div class="exercise"><span>Lat Machine</span> <span class="reps">3 x 12</span></div></div>
+        </div>
+        <div class="card" style="border-left-color: var(--gym)">
+            <h2 class="day-title">Martedì / Venerdì (Gym Legs)</h2>
+            <div class="exercise"><div class="ex-header"><span>Leg Press / Squat</span> <span class="reps">4 x 10</span></div><span class="rest">120s rec</span></div>
+            <div class="exercise"><div class="ex-header"><span>Leg Curl</span> <span class="reps">3 x 12</span></div><span class="rest">90s rec</span></div>
+            <div class="extra"><span class="extra-label">EXTRA</span><div class="exercise"><span>Calf Raise</span> <span class="reps">3 x 15</span></div></div>
         </div>
     </div>
 
@@ -157,27 +100,12 @@
         function show(id) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
-            
-            // Cambia colore bordo in base alla sezione
-            const cards = document.querySelectorAll('.card');
-            let color = "#10b981";
-            if(id === 'trx') color = "#3b82f6";
-            if(id === 'gym') color = "#f59e0b";
-            cards.forEach(c => c.style.borderLeftColor = color);
         }
-
         function setTime(min) {
             const m30 = document.getElementById('m30');
             const m60 = document.getElementById('m60');
-            if(min === 60) {
-                document.body.classList.add('show-60');
-                m60.classList.add('t-active');
-                m30.classList.remove('t-active');
-            } else {
-                document.body.classList.remove('show-60');
-                m30.classList.add('t-active');
-                m60.classList.remove('t-active');
-            }
+            if(min === 60) { document.body.classList.add('show-60'); m60.classList.add('t-active'); m30.classList.remove('t-active'); }
+            else { document.body.classList.remove('show-60'); m30.classList.add('t-active'); m60.classList.remove('t-active'); }
         }
     </script>
 </body>
